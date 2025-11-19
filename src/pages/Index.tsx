@@ -2,17 +2,18 @@ import Hero from "@/components/Hero";
 import WhySection from "@/components/WhySection";
 import ModesSection from "@/components/ModesSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import CTASection from "@/components/CTASection";
+import AppShowcase from "@/components/AppShowcase";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Hero />
       <WhySection />
+      <AppShowcase />
       <ModesSection />
       <FeaturesSection />
-      <CTASection />
+      <FinalCTA />
       <Footer />
     </div>
   );

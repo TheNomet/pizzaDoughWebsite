@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 const ModesSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-gradient-to-b from-[#fbf8f6] to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Section header */}

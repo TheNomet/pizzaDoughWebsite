@@ -1,4 +1,5 @@
-import { Crown, Sparkles, Pizza, ChefHat } from "lucide-react";
+import { Sparkles, Pizza, ChefHat } from "lucide-react";
+import crownIcon from "@/assets/crown-icon.png";
 
 const WhySection = () => {
   return (
@@ -12,9 +13,12 @@ const WhySection = () => {
           {/* Section header */}
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 text-primary mb-4">
-              <Crown className="h-8 w-8" />
+              <img src={crownIcon} alt="Crown icon" className="h-24 w-24" />
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              Pizza&Dough
+            </h1>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
               One App to <span className="bg-gradient-hero bg-clip-text text-transparent">Bake Them All</span>
             </h2>
           </div>
@@ -60,7 +64,7 @@ const WhySection = () => {
           
           {/* Closing statement */}
           <div className="pt-8">
-            <p className="text-2xl md:text-3xl font-bold text-foreground">
+            <p className="text-2xl md:text-2xl font-medium italic text-muted-foreground leading-relaxed">
               You deserve to eat good pizza, and we help you deliver.
             </p>
           </div>

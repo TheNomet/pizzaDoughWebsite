@@ -1,4 +1,5 @@
 import { Mail, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -34,12 +35,12 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-lg">Support</h4>
               <div className="space-y-2">
-                <a 
-                  href="mailto:pizzadough.app@gmail.com?subject=Support Request"
+                <Link 
+                  to="/support"
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
                   Help & Support
-                </a>
+                </Link>
                 <a 
                   href="#"
                   className="block text-muted-foreground hover:text-primary transition-colors"

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download } from "lucide-react";
-import heroImage from "@/assets/hero-pizza.jpg";
+import heroImage from "@/assets/hero-app.png";
 
 const Hero = () => {
   return (
@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-feature">
               <img 
                 src={heroImage} 
-                alt="Artisan pizza dough being crafted" 
+                alt="Pizza&Dough app on iPhone showing perfect pizza with fresh ingredients" 
                 className="w-full h-auto object-cover"
               />
             </div>
