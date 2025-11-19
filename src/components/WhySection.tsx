@@ -23,13 +23,8 @@ const WhySection = () => {
             </h2>
           </div>
           
-          {/* Main message */}
-          <div className="space-y-6 text-lg md:text-xl text-muted-foreground">
-            <p className="leading-relaxed">
-              Everything you need to bake in one place. From preferment optimisation to pizza, 
-              tray recipes, sweet doughs, and bread - we ensure you get <span className="font-semibold text-foreground">perfect results every single time.</span>
-            </p>
-            
+          {/* First message */}
+          <div className="text-lg md:text-xl text-muted-foreground">
             <p className="leading-relaxed">
               Go beyond a simple calculator, <span className="font-semibold text-foreground">take control of your baking.</span>
             </p>
@@ -62,8 +57,17 @@ const WhySection = () => {
             </div>
           </div>
           
+          {/* Main message */}
+          <div className="text-lg md:text-xl text-muted-foreground pt-8">
+            <p className="leading-relaxed">
+              Everything you need to bake in one place. From preferment optimisation to pizza, 
+              tray recipes, sweet doughs, and bread - we ensure you get <span className="font-semibold text-foreground">perfect results every single time.</span>
+            </p>
+          </div>
+          
           {/* Closing statement */}
           <div className="pt-8">
+            <hr className="border-t border-muted-foreground/20 my-8 max-w-md mx-auto" />
             <p className="text-2xl md:text-2xl font-medium italic text-muted-foreground leading-relaxed">
               You deserve to eat good pizza, and we help you deliver.
             </p>
