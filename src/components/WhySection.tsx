@@ -2,7 +2,7 @@ import { Crown, Sparkles, Pizza, ChefHat } from "lucide-react";
 
 const WhySection = () => {
   return (
-    <section className="py-24 bg-gradient-warm relative overflow-hidden">
+    <section id="learn-more" className="py-24 bg-gradient-warm relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
@@ -15,7 +15,7 @@ const WhySection = () => {
               <Crown className="h-8 w-8" />
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-              One App to <span className="bg-gradient-hero bg-clip-text text-transparent">Rule Them All</span>
+              One App to <span className="bg-gradient-hero bg-clip-text text-transparent">Bake Them All</span>
             </h2>
           </div>
           

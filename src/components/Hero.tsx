@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, Sparkles } from "lucide-react";
+import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-pizza.jpg";
 
 const Hero = () => {
@@ -15,7 +15,6 @@ const Hero = () => {
           {/* Left column - Text content */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in-up">
             <Badge className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 text-sm font-semibold">
-              <Sparkles className="h-4 w-4" />
               Backed by Science
             </Badge>
             
@@ -37,16 +36,25 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-8 py-6 shadow-soft"
+                asChild
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download on App Store
+                <a href="https://apps.apple.com/app/pizza-dough/id6753921204" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download on App Store
+                </a>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 className="text-lg px-8 py-6 border-2 hover:bg-secondary transition-colors"
+                asChild
               >
-                Learn More
+                <a href="#learn-more" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('learn-more')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
+                  Learn More
+                </a>
               </Button>
             </div>
           </div>

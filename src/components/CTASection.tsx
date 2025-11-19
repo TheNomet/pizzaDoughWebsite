@@ -29,9 +29,12 @@ const CTASection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-10 py-7 shadow-soft text-white group"
+              asChild
             >
-              <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Download on App Store
+              <a href="https://apps.apple.com/app/pizza-dough/id6753921204" target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                Download on App Store
+              </a>
             </Button>
             
             <Button 
