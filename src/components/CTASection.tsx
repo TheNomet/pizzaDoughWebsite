@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -43,10 +44,10 @@ const CTASection = () => {
               className="text-lg px-10 py-7 border-2 hover:bg-secondary transition-colors group"
               asChild
             >
-              <a href="mailto:pizzadough.app@gmail.com">
+              <Link to="/support">
                 <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Get Support
-              </a>
+              </Link>
             </Button>
           </div>
           

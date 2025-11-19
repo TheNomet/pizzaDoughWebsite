@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download, MessageCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 interface AppScreenshot {
   src: string;
@@ -22,7 +23,7 @@ const AppShowcase = ({ screenshots = [] }: AppShowcaseProps) => {
       ];
 
   return (
-    <section className="py-5 bg-[#fbf8f6] relative overflow-hidden">
+    <section id="download-app" className="py-5 bg-[#fbf8f6] relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - App showcase image */}
@@ -76,10 +77,10 @@ const AppShowcase = ({ screenshots = [] }: AppShowcaseProps) => {
                 className="text-lg px-10 py-7 border-2 hover:bg-secondary transition-colors group"
                 asChild
               >
-                <a href="mailto:pizzadough.app@gmail.com">
+                <Link to="/support">
                   <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Get Support
-                </a>
+                </Link>
               </Button>
             </div>
             

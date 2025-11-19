@@ -1,14 +1,31 @@
 import { Mail, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleDownloadAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      // If already on home page, just scroll to the section
+      const element = document.getElementById('download-app');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to home with hash
+      navigate('/#download-app');
+    }
+  };
   return (
     <footer className="bg-secondary/30 py-12 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 justify-items-center">
             {/* Brand */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h3 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
                 Pizza&Dough
               </h3>
@@ -18,12 +35,12 @@ const Footer = () => {
             </div>
             
             {/* Contact */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h4 className="font-semibold text-lg">Get in Touch</h4>
               <div className="space-y-2">
                 <a 
                   href="mailto:pizzadough.app@gmail.com"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group justify-center"
                 >
                   <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   pizzadough.app@gmail.com
@@ -32,7 +49,7 @@ const Footer = () => {
             </div>
             
             {/* Links */}
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h4 className="font-semibold text-lg">Support</h4>
               <div className="space-y-2">
                 <Link 
@@ -41,9 +58,16 @@ const Footer = () => {
                 >
                   Help & Support
                 </Link>
-                <a 
-                  href="#"
+                <Link 
+                  to="/privacy-policy"
                   className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+                <a 
+                  href="#download-app"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  onClick={handleDownloadAppClick}
                 >
                   Download App
                 </a>

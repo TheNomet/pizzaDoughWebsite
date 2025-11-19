@@ -1,4 +1,5 @@
-import { Mail, HelpCircle, Bug, Lightbulb, Info, ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
+import { Mail, HelpCircle, Bug, Lightbulb, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,15 +9,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 const Support = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-secondary/30">
-        <div className="container mx-auto px-4 py-6">
-          <div className="max-w-4xl mx-auto">
+      {/* Hero Header Section */}
+      <section className="py-24 bg-gradient-warm relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
             <Link 
               to="/" 
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4"
@@ -24,63 +33,40 @@ const Support = () => {
               <ArrowLeft className="h-4 w-4" />
               Back to Home
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              🆘 DoughApp Support
-            </h1>
-            <p className="text-muted-foreground mt-2 text-lg">
-              Get help with your dough calculations and app features
-            </p>
+            
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                Pizza&Dough <span className="bg-gradient-hero bg-clip-text text-transparent">Support</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground">
+                Get help with your dough calculations and app features
+              </p>
+            </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Contact Section */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-primary" />
-                <CardTitle>📧 Contact Us</CardTitle>
-              </div>
-              <CardDescription>Get in Touch</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                Need help? Have questions? We're here for you!
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <strong>Email:</strong>
-                  <a 
-                    href="mailto:pizzadough.app@gmail.com"
-                    className="text-primary hover:underline"
-                  >
-                    pizzadough.app@gmail.com
-                  </a>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  <strong>Response Time:</strong> We typically respond within 24 hours
-                </p>
-              </div>
-              <Button asChild className="mt-4">
-                <a href="mailto:pizzadough.app@gmail.com?subject=Support Request">
-                  Send us an Email
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
+      {/* FAQ Section */}
+      <section className="py-24 bg-gradient-warm relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto space-y-12">
 
-          {/* FAQ Section */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <HelpCircle className="h-5 w-5 text-primary" />
-                <CardTitle>❓ Frequently Asked Questions</CardTitle>
+            {/* Section header */}
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-2xl flex items-center justify-center shadow-soft">
+                <HelpCircle className="h-8 w-8 text-white" />
               </div>
-            </CardHeader>
-            <CardContent>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Frequently Asked <span className="bg-gradient-hero bg-clip-text text-transparent">Questions</span>
+              </h2>
+            </div>
+
+            {/* FAQ Accordion */}
+            <Card className="p-8 bg-card border">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="yeast-calculation">
                   <AccordionTrigger>How does the yeast calculation work?</AccordionTrigger>
@@ -124,96 +110,117 @@ const Support = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-            </CardContent>
-          </Card>
-
-          {/* Report Bug Section */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <Bug className="h-5 w-5 text-primary" />
-                <CardTitle>🐛 Report a Bug</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                Found a bug? We'd love to fix it! Please email us at{" "}
-                <a 
-                  href="mailto:pizzadough.app@gmail.com?subject=Bug Report"
-                  className="text-primary hover:underline"
-                >
-                  pizzadough.app@gmail.com
-                </a>{" "}
-                with:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground ml-4">
-                <li>Description of the issue</li>
-                <li>Steps to reproduce the problem</li>
-                <li>Your device model and iOS version</li>
-                <li>Screenshots if applicable</li>
-              </ul>
-              <Button variant="outline" asChild>
-                <a href="mailto:pizzadough.app@gmail.com?subject=Bug Report">
-                  Report a Bug
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Feature Requests Section */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <Lightbulb className="h-5 w-5 text-primary" />
-                <CardTitle>💡 Feature Requests</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                Have an idea for a new feature? We'd love to hear it! Email us at{" "}
-                <a 
-                  href="mailto:pizzadough.app@gmail.com?subject=Feature Request"
-                  className="text-primary hover:underline"
-                >
-                  pizzadough.app@gmail.com
-                </a>{" "}
-                with your suggestions.
-              </p>
-              <Button variant="outline" asChild>
-                <a href="mailto:pizzadough.app@gmail.com?subject=Feature Request">
-                  Suggest a Feature
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* App Information Section */}
-          <Card>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <Info className="h-5 w-5 text-primary" />
-                <CardTitle>📱 App Information</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <strong>App Name:</strong> DoughApp (Pizza&Dough)
-                </div>
-                <div>
-                  <strong>Version:</strong> 1.0
-                </div>
-                <div>
-                  <strong>Developer:</strong> Pizza&Dough Team
-                </div>
-                <div>
-                  <strong>Bundle ID:</strong> com.pizzadough.app
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Report Bug & Feature Requests Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-12">
+            <div className="grid md:grid-cols-3 gap-8 justify-items-center">
+              {/* Report Bug Card */}
+              <Card className="p-8 bg-card border hover:shadow-feature transition-all group flex flex-col h-full w-full max-w-sm">
+                <div className="flex flex-col h-full space-y-6">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform mx-auto">
+                    <Bug className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="space-y-4 flex-grow">
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-center">
+                      Report a Bug
+                    </h3>
+                    <p className="text-muted-foreground text-center">
+                      Found a bug? We'd love to fix it! Please email us with:
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground text-sm text-center">
+                      <li>Description of the issue</li>
+                      <li>Steps to reproduce the problem</li>
+                      <li>Your device model and iOS version</li>
+                      <li>Screenshots if applicable</li>
+                    </ul>
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-2 hover:bg-secondary transition-colors mt-auto"
+                    asChild
+                  >
+                    <a href="mailto:pizzadough.app@gmail.com?subject=Bug Report">
+                      Report a Bug
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Feature Requests Card */}
+              <Card className="p-8 bg-card border hover:shadow-feature transition-all group flex flex-col h-full w-full max-w-sm">
+                <div className="flex flex-col h-full space-y-6">
+                  <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform mx-auto">
+                    <Lightbulb className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="space-y-4 flex-grow">
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-center">
+                      Feature Requests
+                    </h3>
+                    <p className="text-muted-foreground text-center">
+                      Have an idea for a new feature? We'd love to hear it! Email us with your suggestions.
+                    </p>
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-2 hover:bg-secondary transition-colors mt-auto"
+                    asChild
+                  >
+                    <a href="mailto:pizzadough.app@gmail.com?subject=Feature Request">
+                      Suggest a Feature
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Contact Us Card */}
+              <Card className="p-8 bg-card border hover:shadow-feature transition-all group flex flex-col h-full w-full max-w-sm">
+                <div className="flex flex-col h-full space-y-6">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform mx-auto">
+                    <Mail className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="space-y-4 flex-grow">
+                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-center">
+                      Contact Us
+                    </h3>
+                    <p className="text-muted-foreground text-center">
+                      Need help? Have questions? We're here for you!
+                    </p>
+                    <div className="text-center space-y-2">
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm">
+                        <strong>Email:</strong>
+                        <a 
+                          href="mailto:pizzadough.app@gmail.com"
+                          className="text-primary hover:underline font-semibold"
+                        >
+                          pizzadough.app@gmail.com
+                        </a>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        <strong>Response Time:</strong> We typically respond within 24 hours
+                      </p>
+                    </div>
+                  </div>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-2 hover:bg-secondary transition-colors mt-auto"
+                    asChild
+                  >
+                    <a href="mailto:pizzadough.app@gmail.com?subject=Support Request">
+                      Send us an Email
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

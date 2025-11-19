@@ -17,11 +17,11 @@ const ModesSection = () => {
           </div>
           
           {/* Mode cards */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 justify-items-center">
             {/* Basic Mode */}
-            <Card className="p-8 hover:shadow-feature transition-all duration-300 group animate-fade-in-up bg-card border-2" style={{ animationDelay: "0.1s" }}>
-              <div className="space-y-6">
-                <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform">
+            <Card className="p-8 hover:shadow-feature transition-all duration-300 group animate-fade-in-up bg-card border-2 w-full max-w-lg">
+              <div className="space-y-6 text-center">
+                <div className="w-16 h-16 bg-gradient-hero rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform mx-auto">
                   <Zap className="h-8 w-8 text-white" />
                 </div>
                 
@@ -36,15 +36,15 @@ const ModesSection = () => {
                 </div>
                 
                 <div className="pt-4 space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span>Instant setup</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span>Perfect for beginners</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span>Guaranteed success</span>
                   </div>
@@ -53,9 +53,9 @@ const ModesSection = () => {
             </Card>
             
             {/* Advanced Mode */}
-            <Card className="p-8 hover:shadow-feature transition-all duration-300 group animate-fade-in-up bg-card border-2" style={{ animationDelay: "0.2s" }}>
-              <div className="space-y-6">
-                <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform">
+            <Card className="p-8 hover:shadow-feature transition-all duration-300 group animate-fade-in-up bg-card border-2 w-full max-w-lg">
+              <div className="space-y-6 text-center">
+                <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-soft group-hover:scale-110 transition-transform mx-auto">
                   <Beaker className="h-8 w-8 text-white" />
                 </div>
                 
@@ -70,15 +70,15 @@ const ModesSection = () => {
                 </div>
                 
                 <div className="pt-4 space-y-2">
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>Full parameter control</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>Unlimited experimentation</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center justify-center gap-2 text-sm">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>Professional precision</span>
                   </div>
