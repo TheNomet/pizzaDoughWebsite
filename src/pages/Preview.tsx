@@ -23,7 +23,7 @@ const featureCards = [
 ];
 
 const Preview = () => (
-  <section className="min-h-screen bg-[#fbf8f6] flex items-center justify-center px-6">
+  <section className="min-h-screen bg-[#fbf8f6] flex items-center justify-center px-6 pt-16 md:pt-20">
     <div className="container mx-auto">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left: Brand + messaging */}

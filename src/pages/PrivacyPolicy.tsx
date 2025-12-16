@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-16 md:pt-20">
       {/* Hero Header Section */}
       <section className="py-24 bg-gradient-warm relative overflow-hidden">
         {/* Decorative elements */}

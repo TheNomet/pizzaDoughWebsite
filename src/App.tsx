@@ -4,10 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Header from "./components/Header";
 import Index from "./pages/Index";
 import Support from "./pages/Support";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Preview from "./pages/Preview";
+import Roadmap from "./pages/Roadmap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,11 +38,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <GitHubPagesRedirect />
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/support" element={<Support />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/preview" element={<Preview />} />
+          <Route path="/roadmap" element={<Roadmap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

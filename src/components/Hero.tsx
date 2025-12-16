@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download } from "lucide-react";
 import heroImage from "@/assets/hero-app.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10" />
       
@@ -32,17 +31,31 @@ const Hero = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-8 py-6 shadow-soft"
-                asChild
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <a 
+                href="https://apps.apple.com/app/pizza-dough/id6753921204" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity inline-block"
               >
-                <a href="https://apps.apple.com/app/pizza-dough/id6753921204" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download on App Store
-                </a>
-              </Button>
+                <img 
+                  src="/iosdownload.png" 
+                  alt="Download on the App Store" 
+                  className="h-40 w-auto max-w-[200px]"
+                />
+              </a>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.pizzadough.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity inline-block"
+              >
+                <img 
+                  src="/androiddownload.png" 
+                  alt="Get it on Google Play" 
+                  className="h-40 w-auto max-w-[200px] scale-[1.15]"
+                />
+              </a>
               <Button 
                 size="lg" 
                 variant="outline"

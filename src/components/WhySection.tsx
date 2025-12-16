@@ -3,7 +3,7 @@ import crownIcon from "@/assets/crown-icon.png";
 
 const WhySection = () => {
   return (
-    <section id="learn-more" className="py-24 bg-gradient-warm relative overflow-hidden">
+    <section id="learn-more" className="pt-32 pb-24 md:pt-36 md:pb-24 bg-gradient-warm relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute bottom-10 left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />

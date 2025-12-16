@@ -1,7 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Download, MessageCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 
 interface AppScreenshot {
   src: string;
@@ -25,11 +22,11 @@ const AppShowcase = ({ screenshots = [] }: AppShowcaseProps) => {
   return (
     <section id="download-app" className="py-5 bg-[#fbf8f6] relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Left side - App showcase image */}
           <div className="relative animate-scale-in" style={{ animationDelay: "0.2s" }}>
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative rounded-2xl overflow-hidden max-w-full">
+            <div className="flex justify-center">
+              <div className="relative rounded-2xl overflow-hidden max-w-full w-full">
                 <img
                   src="/app-showcase-1.png"
                   alt="Pizza&Dough app screenshots showing recipe calculator, timeline, and customization features"
@@ -40,7 +37,7 @@ const AppShowcase = ({ screenshots = [] }: AppShowcaseProps) => {
           </div>
           
           {/* Right side - CTA content */}
-          <div className="text-center lg:text-left space-y-12 animate-fade-in-up">
+          <div className="text-center lg:text-left space-y-12 animate-fade-in-up max-w-xl lg:max-w-none mx-auto lg:mx-0">
             <Badge className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 text-sm font-semibold">
               Backed by Science
             </Badge>
@@ -60,28 +57,31 @@ const AppShowcase = ({ screenshots = [] }: AppShowcaseProps) => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-10 py-7 shadow-soft text-white group"
-                asChild
+              <a 
+                href="https://apps.apple.com/app/pizza-dough/id6753921204" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity inline-block"
               >
-                <a href="https://apps.apple.com/app/pizza-dough/id6753921204" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Download on App Store
-                </a>
-              </Button>
+                <img 
+                  src="/iosdownload.png" 
+                  alt="Download on the App Store" 
+                  className="h-40 w-auto max-w-[200px]"
+                />
+              </a>
               
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="text-lg px-10 py-7 border-2 hover:bg-secondary transition-colors group"
-                asChild
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.pizzadough.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-90 transition-opacity inline-block"
               >
-                <Link to="/support">
-                  <MessageCircle className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Get Support
-                </Link>
-              </Button>
+                <img 
+                  src="/androiddownload.png" 
+                  alt="Get it on Google Play" 
+                  className="h-40 w-auto max-w-[200px] scale-[1.15]"
+                />
+              </a>
             </div>
             
             {/* Stats/Social proof

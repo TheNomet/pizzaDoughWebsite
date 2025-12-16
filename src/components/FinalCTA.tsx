@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 
 const FinalCTA = () => {
   return (
@@ -20,18 +18,33 @@ const FinalCTA = () => {
             </p>
           </div>
           
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-hero hover:opacity-90 transition-opacity text-lg px-10 py-7 shadow-soft text-white group"
-              asChild
+            <a 
+              href="https://apps.apple.com/app/pizza-dough/id6753921204" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-90 transition-opacity inline-block"
             >
-              <a href="https://apps.apple.com/app/pizza-dough/id6753921204" target="_blank" rel="noopener noreferrer">
-                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Download on App Store
-              </a>
-            </Button>
+              <img 
+                src="/iosdownload.png" 
+                alt="Download on the App Store" 
+                className="h-40 w-auto max-w-[200px]"
+              />
+            </a>
+            
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.pizzadough.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:opacity-90 transition-opacity inline-block"
+            >
+              <img 
+                src="/androiddownload.png" 
+                alt="Get it on Google Play" 
+                className="h-40 w-auto max-w-[200px] scale-[1.15]"
+              />
+            </a>
           </div>
         </div>
       </div>

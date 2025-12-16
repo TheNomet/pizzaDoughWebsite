@@ -53,6 +53,12 @@ const Footer = () => {
               <h4 className="font-semibold text-lg">Support</h4>
               <div className="space-y-2">
                 <Link 
+                  to="/roadmap"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Roadmap
+                </Link>
+                <Link 
                   to="/support"
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
